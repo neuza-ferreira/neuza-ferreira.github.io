@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuza Ferreira | Direito — FDUL</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond (Editorial/Clássico) & Inter (Minimalista/Direto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            300: '#d6d3d1',
+                            600: '#57534e',
+                            800: '#292524',
+                            900: '#1c1917',
+                            950: '#0c0a09',
+                        },
+                        accent: {
+                            DEFAULT: '#9a6b56',
+                            light: '#b88b76',
+                            dark: '#7c523f'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Ajustes finos de imagem e impressão */
+        .hero-bg {
+            background-image: url('WhatsApp Image 2026-10-22 at 00.08.52.jpeg');
+            background-size: cover;
+            background-position: center 22%;
+            background-repeat: no-repeat;
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .hero-section {
+                min-height: auto !important;
+                height: auto !important;
+                padding: 2rem 0 !important;
+                background: #1c1917 !important;
+                color: white !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased selection:bg-accent selection:text-white">
+
+    <!-- Navegação Minimalista Fixa -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-stone-950/60 backdrop-blur-md border-b border-white/10 no-print">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-serif text-xl font-semibold tracking-wide text-white">
+                N<span class="text-accent-light">.</span>Ferreira
+            </a>
+            
+            <!-- Links Desktop -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest text-stone-200 font-medium">
+                <a href="#sobre" class="hover:text-white transition-colors">Perfil</a>
+                <a href="#experiencia" class="hover:text-white transition-colors">Experiência</a>
+                <a href="#educacao" class="hover:text-white transition-colors">Formação</a>
+                <a href="#competencias" class="hover:text-white transition-colors">Competências</a>
+                <a href="#contacto" class="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all border border-white/15">Contacto</a>
+            </nav>
+
+            <!-- Botão Menu Mobile -->
+            <button id="mobile-menu-btn" aria-label="Abrir Menu" class="md:hidden text-stone-200 hover:text-white p-2 rounded-lg focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-950/95 border-b border-white/10 px-6 py-5 space-y-4 text-xs uppercase tracking-widest text-stone-200">
+            <a href="#sobre" class="block py-2 hover:text-white mobile-link">Perfil</a>
+            <a href="#experiencia" class="block py-2 hover:text-white mobile-link">Experiência</a>
+            <a href="#educacao" class="block py-2 hover:text-white mobile-link">Formação</a>
+            <a href="#competencias" class="block py-2 hover:text-white mobile-link">Competências</a>
+            <a href="#contacto" class="block py-2 text-accent-light font-semibold mobile-link">Contacto</a>
+        </div>
+    </header>
+
+    <!-- LANDING PAGE / HERO SECTION COM A FOTO ENVIADA E OPACIDADE -->
+    <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-stone-950 hero-section">
+        <!-- Imagem de Fundo com Opacidade e Fallback -->
+        <div class="absolute inset-0 hero-bg opacity-45 scale-105 transition-transform duration-1000"></div>
+        
+        <!-- Gradiente subtil para garantir leitura perfeita do texto -->
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-stone-950/60"></div>
+
+        <!-- Conteúdo Principal à Frente -->
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-16">
+            <span class="inline-block px-3.5 py-1 mb-6 text-[11px] uppercase tracking-[0.25em] text-stone-200 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full">
+                Faculdade de Direito da Universidade de Lisboa
+            </span>
+            
+            <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl font-semibold text-white tracking-tight leading-none mb-5">
+                Neuza Ferreira
+            </h1>
+            
+            <p class="text-lg sm:text-2xl text-stone-200 font-light tracking-wide max-w-2xl mx-auto mb-8">
+                Aluna do 4.º ano do Curso de Direito
+            </p>
+
+            <!-- Áreas de Interesse em Destaque -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12 max-w-2xl mx-auto">
+                <span class="px-3 py-1 text-xs text-stone-300 border border-white/15 rounded-full bg-stone-900/40 backdrop-blur-sm">
+                    Direito Administrativo
+                </span>
+                <span class="px-3 py-1 text-xs text-stone-300 border border-white/15 rounded-full bg-stone-900/40 backdrop-blur-sm">
+                    Direito do Urbanismo
+                </span>
+                <span class="px-3 py-1 text-xs text-stone-300 border border-white/15 rounded-full bg-stone-900/40 backdrop-blur-sm">
+                    Direito Constitucional
+                </span>
+                <span class="px-3 py-1 text-xs text-stone-300 border border-white/15 rounded-full bg-stone-900/40 backdrop-blur-sm">
+                    Direito Processual Civil
+                </span>
+            </div>
+
+            <!-- Botões Diretos -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 no-print">
+                <a href="#experiencia" class="w-full sm:w-auto px-8 py-3.5 bg-white text-stone-950 text-xs font-semibold uppercase tracking-widest rounded-full hover:bg-stone-200 transition-all shadow-lg">
+                    Consultar Currículo
+                </a>
+                <a href="#contacto" class="w-full sm:w-auto px-8 py-3.5 bg-transparent text-white text-xs font-medium uppercase tracking-widest rounded-full border border-white/30 hover:bg-white/10 transition-all">
+                    Entrar em Contacto
+                </a>
+            </div>
+        </div>
+
+        <!-- Indicador de Scroll Minimalista -->
+        <a href="#sobre" aria-label="Descer para perfil" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-stone-400 hover:text-white transition-colors no-print">
+            <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL (MINIMALISTA E DIRETO AO PONTO) -->
+    <main class="max-w-4xl mx-auto px-6 py-20 space-y-24">
+
+        <!-- 1. PERFIL PESSOAL -->
+        <section id="sobre" class="scroll-mt-24">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-4">
+                    <p class="text-xs uppercase tracking-[0.2em] text-accent font-semibold mb-1">01 / Perfil</p>
+                    <h2 class="font-serif text-3xl font-semibold text-stone-900">Sobre Mim</h2>
+                </div>
+                <div class="md:col-span-8 space-y-4 text-stone-600 leading-relaxed text-base">
+                    <p class="text-stone-900 font-medium text-lg leading-snug">
+                        Estudante do 4.º ano da licenciatura em Direito na Faculdade de Direito da Universidade de Lisboa (FDUL), com média atual de 15,2 valores.
+                    </p>
+                    <p>
+                        Tenho particular interesse nas áreas de <strong class="font-medium text-stone-800">Direito Administrativo, Direito do Urbanismo, Direito Constitucional e Direito Processual Civil</strong>. Encontro-me à procura de um <strong class="font-medium text-stone-800">estágio de inverno</strong> que me permita obter mais experiência profissional e aplicar, de forma prática, os conhecimentos jurídicos adquiridos ao longo da licenciatura.
+                    </p>
+                    <p>
+                        Sou uma pessoa trabalhadora, persistente e proativa, com uma grande capacidade de foco, sentido crítico e gestão rigorosa do tempo.
+                    </p>
+
+                    <!-- Dados Rápidos Discretos -->
+                    <div class="pt-4 mt-6 border-t border-stone-200 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
+                        <div>
+                            <span class="block text-stone-400 uppercase tracking-wider mb-0.5">Nome Completo</span>
+                            <span class="font-medium text-stone-800">Neuza Maria Palminha Ferreira</span>
+                        </div>
+                        <div>
+                            <span class="block text-stone-400 uppercase tracking-wider mb-0.5">Naturalidade</span>
+                            <span class="font-medium text-stone-800">Torres Vedras, Portugal</span>
+                        </div>
+                        <div>
+                            <span class="block text-stone-400 uppercase tracking-wider mb-0.5">Objetivo Atual</span>
+                            <span class="font-medium text-accent">Estágio de Inverno</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-stone-200">
+
+        <!-- 2. EXPERIÊNCIA E ATIVIDADES -->
+        <section id="experiencia" class="scroll-mt-24">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-4">
+                    <p class="text-xs uppercase tracking-[0.2em] text-accent font-semibold mb-1">02 / Prática</p>
+                    <h2 class="font-serif text-3xl font-semibold text-stone-900 mb-4">Experiência &amp; Atividades</h2>
+                    
+                    <!-- Filtro Rápido Minimalista -->
+                    <div class="flex flex-wrap gap-1.5 no-print" id="exp-filters">
+                        <button data-filter="all" class="filter-btn active px-3 py-1.5 text-xs rounded-full bg-stone-900 text-white font-medium transition-all">
+                            Todas
+                        </button>
+                        <button data-filter="juridico" class="filter-btn px-3 py-1.5 text-xs rounded-full bg-stone-200/70 text-stone-600 hover:bg-stone-200 font-medium transition-all">
+                            Jurídica
+                        </button>
+                        <button data-filter="civico" class="filter-btn px-3 py-1.5 text-xs rounded-full bg-stone-200/70 text-stone-600 hover:bg-stone-200 font-medium transition-all">
+                            Académica &amp; Cívica
+                        </button>
+                    </div>
+                </div>
+
+                <div class="md:col-span-8 divide-y divide-stone-200 border-t border-b border-stone-200" id="exp-list">
+                    
+                    <!-- Item 1 -->
+                    <div class="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 exp-item" data-category="juridico">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="font-medium text-stone-900 text-base">Estágio de Verão</h3>
+                                <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-accent/10 text-accent font-semibold">Jurídico</span>
+                            </div>
+                            <p class="text-sm text-stone-600 mt-0.5">Cristiana Sobreiro — Lawyer</p>
+                        </div>
+                        <span class="text-xs font-mono text-stone-400 shrink-0">Junho — Atual</span>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 exp-item" data-category="juridico">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="font-medium text-stone-900 text-base">Moot Court de Direito Administrativo</h3>
+                                <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-accent/10 text-accent font-semibold">Jurídico</span>
+                            </div>
+                            <p class="text-sm text-stone-600 mt-0.5">Desenvolvimento de competências práticas de argumentação jurídica e oralidade.</p>
+                        </div>
+                        <span class="text-xs font-mono text-stone-400 shrink-0">2025</span>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 exp-item" data-category="civico">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="font-medium text-stone-900 text-base">Membro da Assembleia de Freguesia de A-dos-Cunhados</h3>
+                                <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-stone-200 text-stone-700 font-medium">Cívico</span>
+                            </div>
+                            <p class="text-sm text-stone-600 mt-0.5">Eleita nas eleições autárquicas de 2025.</p>
+                        </div>
+                        <span class="text-xs font-mono text-stone-400 shrink-0">2025 — Atual</span>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 exp-item" data-category="juridico">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="font-medium text-stone-900 text-base">Estágio de Curta Duração</h3>
+                                <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-accent/10 text-accent font-semibold">Jurídico</span>
+                            </div>
+                            <p class="text-sm text-stone-600 mt-0.5">MAGNA Sociedade de Advogados, S.P., R.L.</p>
+                        </div>
+                        <span class="text-xs font-mono text-stone-400 shrink-0">Concluído</span>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 exp-item" data-category="civico">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="font-medium text-stone-900 text-base">Conselheira Pedagógica</h3>
+                                <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-stone-200 text-stone-700 font-medium">Académico</span>
+                            </div>
+                            <p class="text-sm text-stone-600 mt-0.5">Competências de liderança, análise pedagógica, representação estudantil e colaboração com professores.</p>
+                        </div>
+                        <span class="text-xs font-mono text-stone-400 shrink-0">2024 — Atual</span>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 exp-item" data-category="civico">
+                        <div>
+                            <h3 class="font-medium text-stone-900 text-base">Curso de Técnico de Apoio Informático</h3>
+                            <p class="text-sm text-stone-600 mt-0.5">Realizado no âmbito das Eleições Europeias de 2024.</p>
+                        </div>
+                        <span class="text-xs font-mono text-stone-400 shrink-0">2024</span>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 exp-item" data-category="civico">
+                        <div>
+                            <h3 class="font-medium text-stone-900 text-base">Membro de Mesa em Eleições</h3>
+                            <p class="text-sm text-stone-600 mt-0.5">Participação ativa em atos eleitorais (eleições legislativas e autárquicas).</p>
+                        </div>
+                        <span class="text-xs font-mono text-stone-400 shrink-0">Cívico</span>
+                    </div>
+
+                    <!-- Item 8 -->
+                    <div class="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 exp-item" data-category="civico">
+                        <div>
+                            <h3 class="font-medium text-stone-900 text-base">Mentora para Alunos do 1.º Ano</h3>
+                            <p class="text-sm text-stone-600 mt-0.5">Iniciativa desenvolvida pela Associação Académica da Faculdade de Direito da Universidade de Lisboa (AAFDL).</p>
+                        </div>
+                        <span class="text-xs font-mono text-stone-400 shrink-0">2023</span>
+                    </div>
+
+                    <!-- Item 9 -->
+                    <div class="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 exp-item" data-category="civico">
+                        <div>
+                            <h3 class="font-medium text-stone-900 text-base">Participação no Parlamento dos Jovens</h3>
+                            <p class="text-sm text-stone-600 mt-0.5">Debate e representação com o tema "Saúde mental nos jovens".</p>
+                        </div>
+                        <span class="text-xs font-mono text-stone-400 shrink-0">2023</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-stone-200">
+
+        <!-- 3. PERCURSO ACADÉMICO -->
+        <section id="educacao" class="scroll-mt-24">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-4">
+                    <p class="text-xs uppercase tracking-[0.2em] text-accent font-semibold mb-1">03 / Educação</p>
+                    <h2 class="font-serif text-3xl font-semibold text-stone-900">Percurso Académico</h2>
+                </div>
+
+                <div class="md:col-span-8 space-y-6">
+                    <!-- FDUL -->
+                    <div class="p-6 rounded-2xl bg-white border border-stone-200/80 shadow-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                            <h3 class="font-serif text-2xl font-semibold text-stone-900">Faculdade de Direito da Universidade de Lisboa</h3>
+                            <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-stone-100 text-stone-600 shrink-0">2023 — Atual</span>
+                        </div>
+                        <p class="text-sm font-medium text-accent mb-3">Licenciatura em Direito (4.º Ano)</p>
+                        <ul class="space-y-1.5 text-sm text-stone-600">
+                            <li class="flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                                <span>Média Atual: <strong class="text-stone-900">15,2 valores</strong></span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-stone-300"></span>
+                                <span>Conselheira Pedagógica (2024 – Atual) &amp; Mentora AAFDL (2023)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Externato de Penafirme -->
+                    <div class="p-6 rounded-2xl bg-white border border-stone-200/80 shadow-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                            <h3 class="font-serif text-2xl font-semibold text-stone-900">Externato de Penafirme</h3>
+                            <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-stone-100 text-stone-600 shrink-0">2015 — 2023</span>
+                        </div>
+                        <p class="text-sm font-medium text-stone-700 mb-3">Curso de Línguas e Humanidades</p>
+                        <ul class="space-y-1.5 text-sm text-stone-600">
+                            <li class="flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                                <span>Média final de conclusão: <strong class="text-stone-900">18 valores</strong></span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-stone-300"></span>
+                                <span><strong>Quadro de Excelência:</strong> anos letivos 2020/2021, 2021/2022 e 2022/2023</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-stone-300"></span>
+                                <span><strong>Quadro de Valor:</strong> ano letivo 2022/2023</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-stone-300"></span>
+                                <span><strong>Associação de Estudantes:</strong> membro nos anos letivos 2020/2021, 2021/2022 e 2022/2023</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-stone-200">
+
+        <!-- 4. COMPETÊNCIAS, IDIOMAS E INTERESSES -->
+        <section id="competencias" class="scroll-mt-24">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-4">
+                    <p class="text-xs uppercase tracking-[0.2em] text-accent font-semibold mb-1">04 / Valências</p>
+                    <h2 class="font-serif text-3xl font-semibold text-stone-900">Habilidades &amp; Idiomas</h2>
+                </div>
+
+                <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <!-- Habilidades -->
+                    <div>
+                        <h3 class="text-xs uppercase tracking-widest text-stone-400 font-semibold mb-4">Habilidades Principais</h3>
+                        <ul class="space-y-2.5 text-sm text-stone-700">
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-accent mt-0.5">•</span>
+                                <span>Organização e gestão rigorosa do tempo</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-accent mt-0.5">•</span>
+                                <span>Resiliência e capacidade de lidar com pressão</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-accent mt-0.5">•</span>
+                                <span>Sentido crítico e análise de situações</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-accent mt-0.5">•</span>
+                                <span>Participação cívica e envolvimento coletivo</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-accent mt-0.5">•</span>
+                                <span>Elevado sentido de responsabilidade</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Idiomas e Interesses -->
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-xs uppercase tracking-widest text-stone-400 font-semibold mb-4">Idiomas</h3>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex items-center justify-between py-2 border-b border-stone-200">
+                                    <span class="font-medium text-stone-800">Português</span>
+                                    <span class="text-xs text-stone-500">Língua Nativa</span>
+                                </div>
+                                <div class="flex items-center justify-between py-2 border-b border-stone-200">
+                                    <span class="font-medium text-stone-800">Inglês</span>
+                                    <span class="text-xs px-2 py-0.5 rounded bg-stone-200/80 text-stone-700 font-medium">Nível B2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xs uppercase tracking-widest text-stone-400 font-semibold mb-3">Interesses</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs rounded-full bg-stone-200/60 text-stone-700">Associativismo</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-stone-200/60 text-stone-700">Marketing</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-stone-200/60 text-stone-700">Viagens</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-stone-200/60 text-stone-700">Puzzles</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-stone-200/60 text-stone-700">Animais</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ / CONTACTO DIRETO -->
+    <footer id="contacto" class="bg-stone-950 text-stone-200 py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-xs uppercase tracking-[0.2em] text-accent-light font-semibold mb-2">05 / Contacto</p>
+            <h2 class="font-serif text-4xl sm:text-5xl text-white font-semibold mb-4">Vamos conversar?</h2>
+            <p class="text-stone-400 text-sm sm:text-base max-w-xl mb-10">
+                Disponível para oportunidades de estágio de inverno e colaboração nas áreas de Direito Administrativo, Urbanismo, Constitucional e Processual Civil.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+                <!-- Card Email -->
+                <div class="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between gap-4">
+                    <div class="overflow-hidden">
+                        <span class="block text-[11px] uppercase tracking-wider text-stone-400 mb-1">Email</span>
+                        <a href="mailto:neuzampilferreira@gmail.com" class="text-sm sm:text-base font-medium text-white hover:text-accent-light transition-colors truncate block">
+                            neuzampilferreira@gmail.com
+                        </a>
+                    </div>
+                    <button onclick="copyText('neuzampilferreira@gmail.com', 'Email copiado!')" class="px-3 py-1.5 text-xs rounded-lg bg-white/10 hover:bg-white/20 text-stone-200 transition-colors shrink-0 no-print">
+                        Copiar
+                    </button>
+                </div>
+
+                <!-- Card Telemóvel -->
+                <div class="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between gap-4">
+                    <div>
+                        <span class="block text-[11px] uppercase tracking-wider text-stone-400 mb-1">Telemóvel</span>
+                        <a href="tel:+351934167974" class="text-sm sm:text-base font-medium text-white hover:text-accent-light transition-colors">
+                            (+351) 934 167 974
+                        </a>
+                    </div>
+                    <button onclick="copyText('+351934167974', 'Número copiado!')" class="px-3 py-1.5 text-xs rounded-lg bg-white/10 hover:bg-white/20 text-stone-200 transition-colors shrink-0 no-print">
+                        Copiar
+                    </button>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+                <p>© 2026 Neuza Maria Palminha Ferreira. Todos os direitos reservados.</p>
+                <button onclick="window.print()" class="text-stone-400 hover:text-white transition-colors flex items-center gap-1.5 no-print">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                    </svg>
+                    <span>Imprimir / Guardar PDF</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notificação Toast Minimalista (Sem usar alert) -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-full bg-stone-900 text-white text-xs font-medium shadow-xl border border-white/15 opacity-0 pointer-events-none transition-all duration-300 translate-y-2">
+        Copiado para a área de transferência
+    </div>
+
+    <script>
+        // Menu Mobile Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Filtro de Experiência
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const expItems = document.querySelectorAll('.exp-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+
+                // Atualizar estilo dos botões
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-stone-900', 'text-white');
+                    b.classList.add('bg-stone-200/70', 'text-stone-600');
+                });
+                btn.classList.remove('bg-stone-200/70', 'text-stone-600');
+                btn.classList.add('bg-stone-900', 'text-white');
+
+                // Filtrar itens
+                expItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Função para copiar contactos com Toast subtil
+        function copyText(text, message) {
+            const tempInput = document.createElement('textarea');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.remove('opacity-0', 'translate-y-2');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-2');
+            }, 2400);
+        }
+    </script>
+</body>
+</html>
